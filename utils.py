@@ -7,7 +7,7 @@ args = parse_args()
 
 
 def compute_noise_multiplier(target_epsilon, target_delta, global_epoch, local_epoch, batch_size, client_data_sizes):
-    raise ValueError('Deprecated Sigma Calculation method. Please turn to use dp_accounting pkg, see tutorials in https://tensorflow.google.cn/federated/tutorials/federated_learning_with_differential_privacy')
+    raise ValueError('Deprecated Sigma Calculation method. Please turn to use dp_accounting pkg, see tutorials in https://tensorflow.google.cn/federated/tutorials/federated_learning_with_differential_privacy. Or set it as any value like 0.1 for a test running.')
     return
 
 
