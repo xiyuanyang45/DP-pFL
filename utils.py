@@ -7,19 +7,9 @@ args = parse_args()
 
 
 def compute_noise_multiplier(target_epsilon, target_delta, global_epoch, local_epoch, batch_size, client_data_sizes):
-    total_dataset_size = sum(client_data_sizes)
-    sample_rate = batch_size / total_dataset_size * args.user_sample_rate
-    total_steps = args.user_sample_rate * (sum([global_epoch * local_epoch * (client_data_size / batch_size) for client_data_size in client_data_sizes]))
+    raise ValueError('Deprecated Sigma Calculation method. Please turn to use dp_accounting pkg, see tutorials in https://tensorflow.google.cn/federated/tutorials/federated_learning_with_differential_privacy')
+    return
 
-    noise_multiplier = get_noise_multiplier(
-        target_epsilon=target_epsilon,
-        target_delta=target_delta,
-        sample_rate=sample_rate,
-        steps=total_steps, 
-        accountant="rdp"
-    )
-
-    return noise_multiplier
 
 # def compute_noise_multiplier(target_epsilon, target_delta, global_epoch, local_epoch, batch_size, client_data_sizes):
 #     # for cifar10
